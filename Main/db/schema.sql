@@ -1,0 +1,26 @@
+DROP DATABASE IF EXISTS business_db;
+
+CREATE DATABASE business_db;
+
+USE business_db;
+
+CREATE TABLE employees (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(20) NOT NULL,
+    last_name VARCHAR(20) NOT NULL
+);
+
+CREATE TABLE roles (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    employee_role VARCHAR(35) NOT NULL
+);
+
+CREATE TABLE departments (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    department VARCHAR(35) NOT NULL
+);
+
+CREATE TABLE managers (
+    id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+    manager VARCHAR(20) NOT NULL
+);
