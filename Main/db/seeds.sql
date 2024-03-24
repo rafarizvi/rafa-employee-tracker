@@ -16,29 +16,35 @@ VALUES ("Research Chemist", 75000, 1),
        ("Production Supervisor", 75000, 3),
        ("Process Technician", 55000, 3),
        ("Regulatory Affairs Specialist", 75000, 5),
-       ("Supply Chain Manager", 90000, 6),
+       ("Supply Chain Analyst", 90000, 6),
        ("Marketing Coordinator", 65000, 7),
-       ("Manager", 100000, NULL)
+       ("Manager", 100000, 1),
+       ("Manager", 100000, 2),
+       ("Manager", 100000, 3),
+       ("Manager", 100000, 4),
+       ("Manager", 100000, 5),
+       ("Manager", 100000, 6),
+       ("Manager", 100000, 7)
 
 
 INSERT INTO employees (first_name, last_name, role_id, manager_id)
 VALUES ("Sarah", "Johnson", 11, NULL),
-       ("Rachel", "Patel", 11, NULL),
-       ("Michael", "Anderson", 11, NULL),
-       ("Daniel", "Nguyen", 11, NULL),
-       ("Emily", "Rodriguez", 11, NULL),
-       ("Matthew", "Harris", 11, NULL),
-       ("Christopher", "White", 11, NULL),
        ("Ethan", "Adams", 1, 1),
        ("Olivia", "Parker", 1, 1),
-       ("Malik", "Khan", 4, 2),
-       ("Ava", "Patel", 5, 7),
-       ("Noah", "Thompson", 6, 3),
        ("Emma", "Garcia", 3, 1),
-       ("Lucas", "Smith", 7, 3),
+       ("Daniel", "Nguyen", 15, NULL),
        ("Leila", "Kim", 8, 4),
+       ("Rachel", "Patel", 12, NULL),
+       ("Malik", "Khan", 4, 2),
+       ("Michael", "Anderson", 13, NULL),
+       ("Noah", "Thompson", 6, 3),
+       ("Lucas", "Smith", 7, 3),
+       ("Emily", "Rodriguez", 16, NULL),
        ("Juan", "Ramirez", 9, 5),
-       ("Sophia", "Brown", 10, 6)
+       ("Matthew", "Harris", 17, NULL),
+       ("Sophia", "Brown", 10, 6),
+       ("Christopher", "White", 14, NULL),
+       ("Ava", "Patel", 5, 7)
 
 
 
