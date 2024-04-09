@@ -220,7 +220,7 @@ db.connect(err => {
                                 const chosenRole = roles.find(role => role.employee_role === response.role);
                                 const roleId = chosenRole ? chosenRole.id : null;
 
-                              
+
                                 const employees = await new Promise((resolve, reject) => {
                                     db.query('SELECT * FROM employees', (err, employees) => {
                                         if (err) {
@@ -231,8 +231,8 @@ db.connect(err => {
                                     })
                                 })
 
-                                    const chosenManager = employees.find(manager => `${manager.first_name} ${manager.last_name}` === response.manager);
-                                    const managerId = chosenManager ? chosenManager.id : null;
+                                const chosenManager = employees.find(manager => `${manager.first_name} ${manager.last_name}` === response.manager);
+                                const managerId = chosenManager ? chosenManager.id : null;
 
 
                                 // const chosenManager = manager.find(manager => manager.employee_role === response.role);
@@ -256,7 +256,7 @@ db.connect(err => {
 
                             // Insert the role into the roles table
                         });
-                    break;
+                        break;
 
                     case 'update an employee role':
                         // retrieve 
@@ -269,7 +269,7 @@ db.connect(err => {
 
                             const employeeChoices = table.map(table => `${table.first_name} ${table.last_name}`);
                             inquirer.prompt([
-                
+
                                 {
                                     type: 'list',
                                     name: 'employee',
@@ -277,7 +277,7 @@ db.connect(err => {
                                     choices: employeeChoices
                                 }
                             ]).then((response) => {
-                                
+
                                 db.query('SELECT * FROM roles', (err, roles) => {
                                     if (err) {
                                         console.error('Error retrieving employees: ' + err.stack);
@@ -289,25 +289,29 @@ db.connect(err => {
                                     inquirer.prompt([
                                         {
                                             type: 'list',
-                                            name: 'roles',
+                                            name: 'newRole',
                                             message: `Select new role for ${response.employee}`,
                                             choices: roleChoices
                                         }
-                                    ])
-                                })
-
-                                db.query(`UPDATE employees SET role_id = ? WHERE first_name = ? AND last_name = ?`, [newRoleId, selectedEmployee], (err, result) => {
+                                    ]).then((roleResponse) => {
+                                        const newRoleId = roles.find(role => role.employee_role === roleResponse.newRole).id;
+                                        db.query(`UPDATE employees SET role_id = ? WHERE first_name = ? AND last_name = ?`, [newRoleId, response.employee.split(' ')[0], response.employee.split(' ')[1]], (err, result) => {
                                             if (err) {
                                                 console.error('Error updating employee role: ' + err.stack);
                                                 return;
                                             }
                                             console.log('Employee role updated successfully.');
-                                            // Proceed with further actions
+                                            runInquirer();
                                         })
-
+                                    })
+                                })
                             })
+
+
+
                         })
-                        
+
+
                 }
             });
     }
