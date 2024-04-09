@@ -11,3 +11,9 @@ FROM employees AS e
 JOIN roles ON e.role_id = roles.id
 JOIN departments ON roles.department_id = departments.id
 LEFT JOIN employees AS m ON e.manager_id = m.id;
+
+
+SELECT employees.first_name, employees.last_name
+FROM employees
+JOIN roles ON employees.role_id = roles.id
+
