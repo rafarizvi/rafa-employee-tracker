@@ -1,15 +1,19 @@
+-- drop database if it already exists
 DROP DATABASE IF EXISTS business_db;
 
+-- create database
 CREATE DATABASE business_db;
 
+-- use the database
 USE business_db;
 
-
+-- departments table
 CREATE TABLE departments (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     department VARCHAR(35)
 );
 
+-- roles table
 CREATE TABLE roles (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     employee_role VARCHAR(35),
@@ -20,6 +24,7 @@ CREATE TABLE roles (
     ON DELETE SET NULL
 );
 
+-- employees table
 CREATE TABLE employees (
     id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     first_name VARCHAR(20) NOT NULL,

@@ -1,7 +1,9 @@
+// Required packages
 const inquirer = require('inquirer');
 const mysql = require('mysql2');
 const Table = require('cli-table');
 
+// creates a MySQL connection
 const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
@@ -9,6 +11,7 @@ const db = mysql.createConnection({
     database: 'business_db'
 });
 
+// connects to the database
 db.connect(err => {
     if (err) {
         console.error('Error connecting to database: ' + err.stack);
@@ -16,6 +19,7 @@ db.connect(err => {
     }
     console.log('Connected to the database.');
 
+    // runs inquirer to display selections, then uses switch cases for each option
     function runInquirer() {
         inquirer
             .prompt([{
