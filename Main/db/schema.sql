@@ -34,5 +34,3 @@ CREATE TABLE employees (
     ON DELETE SET NULL ON UPDATE CASCADE
 );
 
-
-

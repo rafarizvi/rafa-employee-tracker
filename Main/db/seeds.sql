@@ -18,13 +18,13 @@ VALUES ("Research Chemist", 75000, 1),
        ("Regulatory Affairs Specialist", 75000, 5),
        ("Supply Chain Analyst", 90000, 6),
        ("Marketing Coordinator", 65000, 7),
-       ("Manager", 100000, 1),
-       ("Manager", 100000, 2),
-       ("Manager", 100000, 3),
-       ("Manager", 100000, 4),
-       ("Manager", 100000, 5),
-       ("Manager", 100000, 6),
-       ("Manager", 100000, 7)
+       ("R&D Manager", 100000, 1),
+       ("Regulatory Affairs Manager", 100000, 2),
+       ("Quality Assurance Manager", 100000, 3),
+       ("Production Manager", 100000, 4),
+       ("Operations Manager", 100000, 5),
+       ("Marketing Manager", 100000, 6),
+       ("EHS Manager", 100000, 7)
 
 
 INSERT INTO employees (first_name, last_name, role_id, manager_id)

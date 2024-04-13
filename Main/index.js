@@ -22,7 +22,7 @@ db.connect(err => {
                 type: 'list',
                 name: 'text',
                 message: 'What would you like to do:',
-                choices: ['view all departments', 'view all roles', 'view all employees', 'add a department', 'add a role', 'add an employee', 'update an employee role']
+                choices: ['view all departments', 'view all roles', 'view all employees', 'add a department', 'add a role', 'add an employee', 'update an employee role', 'exit program']
             }])
             .then((response) => {
                 switch (response.text) {
@@ -234,10 +234,6 @@ db.connect(err => {
                                 const chosenManager = employees.find(manager => `${manager.first_name} ${manager.last_name}` === response.manager);
                                 const managerId = chosenManager ? chosenManager.id : null;
 
-
-                                // const chosenManager = manager.find(manager => manager.employee_role === response.role);
-                                // const roleId = chosenRole ? chosenRole.id : null;
-
                                 if (!roleId) {
                                     console.error('Error: Invalid role selected');
                                     return;
@@ -253,8 +249,6 @@ db.connect(err => {
                                     runInquirer();
                                 });
                             });
-
-                            // Insert the role into the roles table
                         });
                         break;
 
@@ -306,11 +300,11 @@ db.connect(err => {
                                     })
                                 })
                             })
+                        });
+                        break;
 
-
-
-                        })
-
+                    case 'exit program':
+                        console.log('Goodbye!');
 
                 }
             });
