@@ -12,6 +12,10 @@ run "npm i" in the console to install the required packages.
 
 This is an employee tracker program, which allows users to select an option from a list. Users are able to view and update infromation on tables containing employee information.
 
+NOTE: Don't forget to add your MySQL password in the index.js file.
+
+## [Link to employee tracker video](https://drive.google.com/file/d/1bXyIFufGM91QDhXr85QeokDvBjzq874_/view)
+
 ## Screenshot of application
 
 ![screenshot of employee tracker](assets/images/screenshot.png)

@@ -7,7 +7,7 @@ const Table = require('cli-table');
 const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
-    password: 'sqlbootcamp',
+    password: '',
     database: 'business_db'
 });
 
